@@ -14,8 +14,26 @@ def precision_recall(ious, gt_classes, pred_classes):
     returns:
     - precision [float]
     - recall [float]
-    """
+    """          
     # IMPLEMENT THIS FUNCTION
+    xs, ys = np.where(ious>0.5)
+
+    TP = 0
+    FP = 0
+    FN = 0
+
+    for x, y in zip(xs, ys):
+        if gt_classes[x] == pred_classes[y]:
+            TP += 1
+        else:
+            FP + 1
+    
+    matched_gt = len(np.unique(xs))
+    FN = len(gt_classes) - matched_gt
+
+
+    precision = TP / (TP + FP) # Out of all Dog prediction, how many you got right?
+    recall = TP / (TP + FN) # Out of all Dog Truth, how many you got right?
     return precision, recall
 
 
