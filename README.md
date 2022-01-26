@@ -35,7 +35,7 @@ as inputs. Both arrays are 1x4 numpy arrays. The array are using the following f
 ```
 [x1, y1, x2, y2]
 ```
-where `x1 < x2` and `y1 < y2`. `(x, y1)` are the coordinates of the upper left corner 
+where `x1 < x2` and `y1 < y2`. `(x1, y1)` are the coordinates of the upper left corner 
 and `(x2, y2)` the coordinates of the lower right corner of the bounding box.
 
 ### Example
